@@ -46,4 +46,33 @@
                         标记                        值
                     listenport                - IPv4 侦听端口
                   connectaddress              - IPv4 连接地址
-                   connectport
+                   connectport                - IPv4 连接端口
+                   listenaddress              - IPv4 侦听地址 
+                     protocol             - 使用的协议。现在只支持 TCP
+                     
+        增：
+                
+           netsh interface portproxy add v4tov4 listenport=22 connectaddress=172.17.0.2 connectport=22
+           
+        删：
+        
+           netsh interface portproxy delete v4tov4 listenport=22
+           
+        改：
+        
+           netsh interface portproxy add v4tov4 listenport=80 connectaddress=172.17.0.2 connectport=22
+       
+        查：
+        
+           netsh interface portproxy show all // 查看所有端口映射表
+           netsh interface portproxy show v4tov4 // 查看ipv4的映射表
+           
+        netsh功能还有很多，若需要了解可参看[netsh命令使用](http://www.james-tw.com/windows/windows-netsh-zhi-ling-cao-zuo)
+           
+        
+            
+                     
+                     
+                     
+                     
+                     
